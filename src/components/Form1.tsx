@@ -22,7 +22,6 @@ import { ChevronDown } from "lucide-react";
 import { ticketSchema } from "@/schema";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-// import { useAppDispatch } from "@/redux/store";
 import { incrementStep, resetForm, updateForm } from "@/redux/slice/formSlice";
 import { useAppDispatch } from "@/redux/store";
 import { useEffect } from "react";

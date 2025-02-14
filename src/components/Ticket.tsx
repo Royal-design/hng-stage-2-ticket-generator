@@ -12,13 +12,13 @@ export const Ticket = () => {
   const dispatch = useAppDispatch();
   const user = useAppSelector((state) => state.form);
 
-  const downloadTicket = () => {
-    const ticketElement = document.getElementById("ticket-details");
+  const downloadTicketPdf = () => {
+    const ticketElement = document.getElementById("ticket-information");
 
     if (!ticketElement) return;
 
     html2canvas(ticketElement, {
-      scale: 3, // Higher scale for better quality
+      scale: 3,
       useCORS: true,
       allowTaint: true
     }).then((canvas) => {
@@ -27,7 +27,7 @@ export const Ticket = () => {
       const pdf = new jsPDF({
         orientation: "p",
         unit: "mm",
-        format: [canvas.width * 0.2645, canvas.height * 0.2645] // Converts pixels to mm
+        format: [canvas.width * 0.2645, canvas.height * 0.2645]
       });
 
       pdf.addImage(
@@ -65,7 +65,7 @@ export const Ticket = () => {
           </section>
           <section className="flex flex-col items-center gap-6 w-full">
             <div
-              id="ticket-details"
+              id="ticket-information"
               className="flex px-[21px] max-md:px-[17.5px] py-[32px] flex-col justify-center items-center gap-[10px] self-stretch rounded-[24px]"
             >
               <div className="w-[300px] h-[600px] ">
@@ -203,7 +203,7 @@ export const Ticket = () => {
                 Book Another Ticket
               </Button>
               <Button
-                onClick={downloadTicket}
+                onClick={downloadTicketPdf}
                 className=" hover:bg-[#3c98a8] w-full transition-colors duration-200 flex px-6 py-6 justify-center items-center gap-2 flex-1 rounded-md bg-[#24A0B5]"
               >
                 Download Ticket
@@ -211,7 +211,7 @@ export const Ticket = () => {
             </div>
             <div className="flex md:hidden flex-col items-start w-full font-nanum-myeongjo gap-4 flex-[1_0_0]">
               <Button
-                onClick={downloadTicket}
+                onClick={downloadTicketPdf}
                 className=" hover:bg-[#3c98a8] w-full transition-colors duration-200 flex px-6 py-4 justify-center items-center gap-2 flex-1 rounded-md bg-[#24A0B5]"
               >
                 Download Ticket
