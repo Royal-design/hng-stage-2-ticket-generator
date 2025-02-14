@@ -3,7 +3,7 @@ import { Navbar } from "./components/Navbar";
 
 function App() {
   return (
-    <div className="w-full h-auto bg-[#02191D] max-md:px-[20px]">
+    <div className="w-full h-screen bg-[#02191D] max-md:px-[20px]">
       <Navbar />
       <MultiStepForm />
     </div>

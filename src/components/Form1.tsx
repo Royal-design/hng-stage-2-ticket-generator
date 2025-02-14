@@ -203,8 +203,8 @@ export const Form1 = () => {
                     value={field.value || undefined}
                   >
                     <FormControl>
-                      <SelectTrigger className="relative h-[48px] p-[16px] text-white border border-[#07373F] text-[12px] leading-[28px] font-roboto">
-                        <SelectValue placeholder="Select quantity..." />
+                      <SelectTrigger className="relative h-[48px] p-[16px] text-white border border-[#07373F] text-[16px] leading-[28px] font-roboto">
+                        <SelectValue placeholder="Select Ticket Number" />
                         <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 text-white w-6 h-6" />
                       </SelectTrigger>
                     </FormControl>
