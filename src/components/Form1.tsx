@@ -87,9 +87,6 @@ export const Form1 = () => {
   };
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0
-    });
     if (window.location.pathname === "/") {
       window.history.replaceState({}, "", "/generate-ticket/step1");
     }

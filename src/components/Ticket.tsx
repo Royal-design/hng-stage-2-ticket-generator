@@ -194,6 +194,9 @@ export const Ticket = () => {
                 onClick={() => {
                   dispatch(resetForm());
                   window.location.href = "/generate-ticket";
+                  window.scrollTo({
+                    top: 0
+                  });
                 }}
                 className="flex bg-[#052228] w-full transition-colors duration-200 text-[#24A0B5] py-6 justify-center items-center gap-2 flex-1 rounded-md border border-[#24A0B5]"
               >
@@ -217,6 +220,9 @@ export const Ticket = () => {
                 onClick={() => {
                   dispatch(resetForm());
                   window.location.href = "/generate-ticket";
+                  window.scrollTo({
+                    top: 0
+                  });
                 }}
                 className="flex bg-[#052228] w-full transition-colors duration-200 text-[#24A0B5] py-4 justify-center items-center gap-2 flex-1 rounded-md border border-[#24A0B5]"
               >

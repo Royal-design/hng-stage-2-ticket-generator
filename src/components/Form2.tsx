@@ -275,7 +275,13 @@ export const Form2 = () => {
 
           <div className="flex max-md:hidden items-start w-full gap-4 max-md:flex-col flex-[1_0_0] font-nanum-myeongjo">
             <Button
-              onClick={() => dispatch(decrementStep())}
+              onClick={() => {
+                dispatch(decrementStep());
+                window.scrollTo({
+                  top: 0
+                });
+                window.location.href = "/generate-ticket/step1";
+              }}
               className="bg-[#03232a] max-md:w-full transition-colors duration-200 hover:bg-[#0a181b] text-[#24A0B5] w-full py-6 border border-[#24A0B5] rounded-md"
             >
               Back
@@ -349,7 +355,13 @@ export const Form2 = () => {
               )}
             </Button>
             <Button
-              onClick={() => dispatch(decrementStep())}
+              onClick={() => {
+                dispatch(decrementStep());
+                window.scrollTo({
+                  top: 0
+                });
+                window.location.href = "/generate-ticket/step1";
+              }}
               className="flex bg-[#03232a] max-md:w-full transition-colors duration-200 hover:bg-[#0a181b] max-md:py-[12px] text-[#24A0B5] justify-center items-center gap-2 flex-1 rounded-md border border-[#24A0B5]"
             >
               Back
