@@ -20,7 +20,7 @@ import {
   incrementStep,
   updateForm
 } from "@/redux/slice/formSlice";
-import { useAppDispatch } from "@/redux/store";
+import { useAppDispatch, useAppSelector } from "@/redux/store";
 import { Mail } from "lucide-react";
 import { Textarea } from "./ui/textarea";
 import axios from "axios";
@@ -36,6 +36,7 @@ type StepTwoFormSchema = z.infer<typeof stepTwoFormSchema>;
 const apiKey = import.meta.env.VITE_API_KEY;
 export const Form2 = () => {
   const dispatch = useAppDispatch();
+  const type = useAppSelector((state) => state.form.ticketType);
 
   const savedData = JSON.parse(localStorage.getItem("formStepTwo") || "{}");
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -315,7 +316,7 @@ export const Form2 = () => {
                   Generating...
                 </>
               ) : (
-                "Get My Free Ticket"
+                `Get My ${type} Ticket`
               )}
             </Button>
           </div>
@@ -351,7 +352,7 @@ export const Form2 = () => {
                   Generating...
                 </>
               ) : (
-                "Get My Free Ticket"
+                `Get My ${type} Ticket`
               )}
             </Button>
             <Button
